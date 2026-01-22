@@ -6,12 +6,14 @@ import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from textblob import TextBlob
 
+uri = ""
+
+# Spark session
 spark = SparkSession.builder \
+    .config("spark.jars.packages","org.mongodb.spark:mongo-spark-connector_2.12:10.3.0") \
+    .config("spark.mongodb.read.connection.uri", uri) \
+    .config("spark.mongodb.write.connection.uri", uri) \
     .appName("RedditSilverStream") \
-    .config(
-        "spark.jars.packages",
-        "org.mongodb.spark:mongo-spark-connector_2.12:10.3.0"
-    ) \
     .getOrCreate()
 
 df = spark.readStream \

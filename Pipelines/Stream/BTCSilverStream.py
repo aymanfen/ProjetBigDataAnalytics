@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
-uri="mongodb+srv://aymanfenkouch_db_user:pVXppiIq5O6WWOI8@stockmarketcluster.vnoccrr.mongodb.net/?appName=StockMarketCluster"
+uri=''
 
 spark = SparkSession.builder \
     .appName("BTCSilverStream") \

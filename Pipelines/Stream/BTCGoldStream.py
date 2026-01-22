@@ -1,9 +1,13 @@
 from pyspark.sql import SparkSession
 
-uri="mongodb+srv://aymanfenkouch_db_user:pVXppiIq5O6WWOI8@stockmarketcluster.vnoccrr.mongodb.net/?appName=StockMarketCluster"
+# MongoDB URI
+uri = ""
 
-
+# Spark session
 spark = SparkSession.builder \
+    .config("spark.jars.packages","org.mongodb.spark:mongo-spark-connector_2.12:10.3.0") \
+    .config("spark.mongodb.read.connection.uri", uri) \
+    .config("spark.mongodb.write.connection.uri", uri) \
     .appName("BTCGoldStream") \
     .getOrCreate()
 

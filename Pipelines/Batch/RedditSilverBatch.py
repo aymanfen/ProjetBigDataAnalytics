@@ -4,7 +4,7 @@ from pyspark.sql.types import FloatType
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from textblob import TextBlob
 
-uri="mongodb+srv://aymanfenkouch_db_user:pVXppiIq5O6WWOI8@stockmarketcluster.vnoccrr.mongodb.net/?appName=StockMarketCluster"
+uri=''
 
 spark = SparkSession.builder \
     .appName("RedditSilverBatch") \
